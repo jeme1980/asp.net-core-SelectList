@@ -5,9 +5,14 @@
             return View();
         }
         
-        
-        
-        
+        =====================================view==================================================
+        <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+       =====================================view================================================== 
+
+
 // POST: Schol/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -42,6 +47,13 @@
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Email", scholInfo.UserId);
             return View(scholInfo);
         }
+        =====================================view==================================================
+        <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+        =====================================view==================================================
         
 // POST: Schol/Edit/5
         [HttpPost]
